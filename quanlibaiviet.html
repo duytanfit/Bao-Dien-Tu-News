@@ -31,6 +31,7 @@
         <a href="quanlinhan.html" class="list-group-item list-group-item-action bg-light">Quản lí nhãn</a>
         <a href="quanlichuyenmuc.html" class="list-group-item list-group-item-action bg-light">Quản lí chuyên mục</a>
         <a href="quanlinguoidung.html" class="list-group-item list-group-item-action bg-light">Quản lí người dùng</a>
+        <a href="quanlinguoidung.html" class="list-group-item list-group-item-action bg-light">Quản lí bản nháp</a>
 
       </div>
     </div>
@@ -49,17 +50,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Xem danh sách <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="quanlibaiviet.html">Xem danh sách <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Thêm</a>
+              <a class="nav-link" href="thembaiviet.html">Thêm</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                  <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Đăng xuất</a>
+              </div>
             </li>
           </ul>
         </div>
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Các bài viết</h1>
+        <h1 class="mt-4">Danh sách bài viết</h1>
 
         <ul class="list-group">
           <li class="list-group-item">
@@ -67,9 +78,9 @@
               <div class="col-sm-9">
                 <div class="single-blog-post style-4 d-flex align-items-center mb-50">
                     <div class="post-thumb">
-                        <a href="#"><img src="img/bg-img/new3.jpg" alt=""></a>
+                        <a href="#"><img src="img/bg-img/new3.jpg" alt="" class="img-thumbnail"></a>
                     </div>
-                    <div class="post-data">
+                    <div class="col-sm-9" class="post-data">
                         <a href="#" class="post-title">
                             <h6>Điều Khiển Màu Sắc Với 6 Cách Phối Màu Cơ Bản</h6>
                         </a>
@@ -90,9 +101,9 @@
               <div class="col-sm-9">
                 <div class="single-blog-post style-4 d-flex align-items-center mb-50">
                     <div class="post-thumb">
-                        <a href="#"><img src="img/bg-img/new3.jpg" alt=""></a>
+                        <a href="#"><img src="img/bg-img/new3.jpg" alt="" class="img-thumbnail"></a>
                     </div>
-                    <div class="post-data">
+                    <div class="col-sm-9" class="post-data">
                         <a href="#" class="post-title">
                             <h6>Điều Khiển Màu Sắc Với 6 Cách Phối Màu Cơ Bản</h6>
                         </a>
@@ -113,9 +124,9 @@
               <div class="col-sm-9">
                 <div class="single-blog-post style-4 d-flex align-items-center mb-50">
                     <div class="post-thumb">
-                        <a href="#"><img src="img/bg-img/new3.jpg" alt=""></a>
+                        <a href="#"><img src="img/bg-img/new3.jpg" alt="" class="img-thumbnail"></a>
                     </div>
-                    <div class="post-data">
+                    <div class="col-sm-9" class="post-data">
                         <a href="#" class="post-title">
                             <h6>Điều Khiển Màu Sắc Với 6 Cách Phối Màu Cơ Bản</h6>
                         </a>
@@ -136,9 +147,9 @@
               <div class="col-sm-9">
                 <div class="single-blog-post style-4 d-flex align-items-center mb-50">
                     <div class="post-thumb">
-                        <a href="#"><img src="img/bg-img/new3.jpg" alt=""></a>
+                        <a href="#"><img src="img/bg-img/new3.jpg" alt="" class="img-thumbnail"></a>
                     </div>
-                    <div class="post-data">
+                    <div class="col-sm-9" class="post-data">
                         <a href="#" class="post-title">
                             <h6>Điều Khiển Màu Sắc Với 6 Cách Phối Màu Cơ Bản</h6>
                         </a>
@@ -155,36 +166,37 @@
             </div>
           </li>
         </ul>
-        <nav aria-label="Page navigation example">
-        <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
+        <div>
+          <nav aria-label="Page navigation example">
+          <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+          </nav>
 
+          </div>
+          <!-- /#page-content-wrapper -->
 
+          </div>
+          <!-- /#wrapper -->
 
-      </div>
-    <!-- /#page-content-wrapper -->
+          <!-- Bootstrap core JavaScript -->
+          <script src="vendor/jquery/jquery.min.js"></script>
+          <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </div>
-  <!-- /#wrapper -->
+          <!-- Menu Toggle Script -->
+          <script>
+          $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+          });
+          </script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          </body>
+        </div>
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-
-</body>
 
 </html>
