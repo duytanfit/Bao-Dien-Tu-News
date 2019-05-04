@@ -12,7 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="http://www.urbanui.com/equinox/template/vendors/jquery-tags-input/jquery.tagsinput.min.css">
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
   <script src="https://cdn.ckeditor.com/4.11.4/full/ckeditor.js"></script>
@@ -72,30 +72,33 @@
           <div class="single-blog-post">
 
               <!-- Writer Form -->
-              <form style="margin-top: 30px;">
+              <form>
                   <!-- Input Title -->
-                  <div class="form-group row" style="display: flex; justify-content: center;">
-                      <label for="inputTitle" class="col-sm-1 col-form-label">Tiêu đề</label>
-                      <div class="col-sm-8">
-                          <input type="label" class="form-control" id="inputTitle" placeholder="Cử tri mong Tổng bí thư, Chủ tịch nước sớm bình phục">
+                  <div class="form-group row">
+                      <label for="inputTitle" class="col-12 col-md-1 col-form-label">Tiêu đề</label>
+                      <div class="col-12 col-md-11">
+                          <input type="label" class="form-control" id="inputTitle">
                       </div>
                   </div>
 
                   <!-- Input Summary -->
-                  <div class="form-group row" style="display: flex; justify-content: center;">
-                      <label for="inputSummary" class="col-sm-1 col-form-label">Tóm tắt</label>
-                      <div class="col-sm-8">
-                          <textarea class="form-control" id="inputSummary" placeholder="Dân mong lắm Tổng bí thư, Chủ tịch nước sớm bình phục tốt để tiếp tục trọng trách hai tay gìn giữ một sơn hà, cử tri Trần Viết Hoàn phát biểu sáng 4/5."></textarea>
+                  <div class="form-group row">
+                      <label for="inputSummary" class="col-12 col-md-1 col-form-label">Tóm tắt</label>
+                      <div class="col-12 col-md-11">
+                          <textarea class="form-control" id="inputSummary"></textarea>
                       </div>
                   </div>
 
 
-                  <div class="form-row" style="display: flex; justify-content: center;">
+                  <div class="form-row">
 
                       <!-- Input Category -->
-                      <label for="inputCategory" class="col-sm-1 col-form-label">Chuyên mục</label>
-                      <div class="col-sm-3">
+                      <label for="inputCategory" class="col-12 col-md-1 col-form-label">Chuyên mục</label>
+
+                      <!-- Parent Category -->
+                      <div class="col-12 col-md-2">
                           <select class="form-control" id="inputCategory">
+                              <option></option>
                               <option>Đời sống</option>
                               <option>Giải trí</option>
                               <option>Giáo dục</option>
@@ -108,26 +111,74 @@
                           </select>
                       </div>
 
-                      <!-- Input Tag -->
-                      <label for="inputTag" class="col-sm-1 col-form-label" style="margin-left: 100px;">Nhãn</label>
-                      <div class="col-sm-3">
-                          <input class="form-control" id="inputTag" placeholder="tiếp xúc cử tri, Nguyễn Phú Trọng, Đảng Cộng sản Việt Nam, Nguyễn Thị Kim Ngân">
+                      <!-- Child Category -->
+                      <div class="col-12 col-md-2">
+                          <select class="form-control" id="inputCategory">
+                              <option></option>
+                              <option>Đời sống</option>
+                              <option>Giải trí</option>
+                              <option>Giáo dục</option>
+                              <option>Kinh tế</option>
+                              <option>Pháp luật</option>
+                              <option>Thế giới</option>
+                              <option>Thể thao</option>
+                              <option>Văn hoá</option>
+                              <option>Xã hội</option>
+                          </select>
+                      </div>
+
+                      <!-- Premium Check -->
+                      <div class="form-group form-check">
+                          <div class="col-12 col-md-1">
+                              <input type="checkbox" class="form-check-input" id="inputCheck">
+                          </div>
+                          <div class="col-12 col-md-1">
+                              <label class="col-12 col-md-1 form-check-label" for="inputCheck">Premium</label>
+                          </div>
                       </div>
 
                   </div>
 
                   <!-- Input Content -->
-                  <div style="display: flex; justify-content: center; margin-top: 20px;">
-                      <label for="editor" class="col-sm-1 col-form-label">Nội dung</label>
-                      <div class="col-sm-8">
-                          <textarea name="editor" class="ckeditor" id="editor" placeholder=""></textarea>
+                  <div style="margin-top: 20px;">
+                      <label for="editor" class="col-12 col-form-label">Nội dung</label>
+                      <div class="col-12" col-lg-8>
+                          <textarea name="editor" class="ckeditor" id="editor"></textarea>
                       </div>
                   </div>
 
-                  <div style="display: flex; justify-content: center; margin-top: 10px;">
-                      <button type="submit" class="btn btn-primary">Thêm bài viết mới</button>
-                      <button type="button" class="btn btn-success">Thêm vào bản nháp</button>
-                      <button type="button" class="btn btn-secondary">Thoát</button>
+                  <!-- Input Tag -->
+                  <div class="form-group">
+                      <label for="inputTag" class="col-12 col-md-1 col-form-label" style="margin-top: 20px;">Nhãn</label>
+                      <div class="col-12 col-md-11">
+
+                          <input name="tags" id="tags" value="đời sống,pháp luật,xã hội" data-tagsinput-init="true" style="display: none;" class="editable editable-click editable-empty">
+
+                          <div id="tags_tagsinput" class="tagsinput" style="width: 100%; min-height: 75%; height: 75%;">
+                              <span class="tag">
+                                  <span>đời sống&nbsp;&nbsp;</span>
+                                  <a href="#" title="Removing tag">x</a>
+                              </span>
+                              <span class="tag">
+                                  <span>pháp luật&nbsp;&nbsp;</span>
+                                  <a href="#" title="Removing tag">x</a>
+                              </span>
+                              <span class="tag">
+                                  <span>xã hội&nbsp;&nbsp;</span>
+                                  <a href="#" title="Removing tag">x</a>
+                              </span>
+                              <div id="tags_addTag">
+                                  <input id="tags_tag" value="" data-default="Add More" style="color: rgb(102, 102, 102); width: 68px;">
+                              </div>
+                              <div class="tags_clear"></div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div style="display: flex; justify-content: center; margin-top: 30px;">
+                    <button type="submit" class="btn btn-primary">Đăng bài viết mới</button>
+                    <button type="button" class="btn btn-success">Thêm vào bản nháp</button>
+                    <button type="button" class="btn btn-secondary">Thoát</button>
                   </div>
 
               </form>
