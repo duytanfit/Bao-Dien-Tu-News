@@ -9,7 +9,7 @@
 
 
     <!-- Title -->
-    <title>Xem danh sách bài viết | FITNEWS</title>
+    <title>Quản lí bản nháp | FITNEWS</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/iconweb.ico">
@@ -18,47 +18,34 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <!-- Input Tag -->
+    <link rel="stylesheet" href="http://www.urbanui.com/equinox/template/vendors/jquery-tags-input/jquery.tagsinput.min.css">
+
 </head>
 
 <body>
     <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
 
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="top-header-content d-flex align-items-center justify-content-between">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-                            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
 
-                            <!-- Login Search Area -->
-                            <div class="login-search-area d-flex align-items-center">
-                                 <!-- Search Form -->
-                                 <div class="search-form">
-                                        <form action="#" method="post">
-                                            <input type="search" name="search" class="form-control" placeholder="Tìm kiếm">
-                                            <button type="submit">
-                                                <i class="fa fa-search" aria-hidden="true"></i></button>
-                                        </form>
-                                    </div>
-                                <!-- Login -->
-                                <div class="login d-flex">
-                                    <a href="#">Đăng nhập</a>
-                                    <a href="#">Đăng ký</a>
-                                </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
 
-                            </div>
-                        </div>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Editor</a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Đăng xuất</a>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
+    </nav>
+    <!-- Navigation Bar End -->
 
-    </header>
     <!-- ##### Header Area End ##### -->
 
 
@@ -109,8 +96,8 @@
                         <td class="cell-action" width="30%">
                             <ul style="list-style-type: none; display: flex; flex-direction: row;
                             justify-content: space-between;">
-                                <li><button class="btn btn-primary">Duyệt bài</button></li>
-                                <li><button class="btn btn-primary">Từ chối</button></li>
+                                <li><button id="btn-accept" class="btn btn-primary" data-toggle="modal" data-target="#acceptModal">Duyệt bài</button></li>
+                                <li><button id="btn-dismiss" class="btn btn-primary" data-toggle="modal" data-target="#dismissModal">Từ chối</button></li>
                             </ul>
                         </td>
                     </tr>
@@ -145,8 +132,8 @@
                         <td class="cell-action" width="30%">
                             <ul style="list-style-type: none; display: flex; flex-direction: row;
                             justify-content: space-between;">
-                                <li><button class="btn btn-primary">Duyệt bài</button></li>
-                                <li><button class="btn btn-primary">Từ chối</button></li>
+                                <li><button id="btn-accept" class="btn btn-primary" data-toggle="modal" data-target="#acceptModal">Duyệt bài</button></li>
+                                <li><button id="btn-dismiss" class="btn btn-primary" data-toggle="modal" data-target="#dismissModal">Từ chối</button></li>
                             </ul>
                         </td>
                     </tr>
@@ -181,8 +168,8 @@
                         <td class="cell-action" width="30%">
                             <ul style="list-style-type: none; display: flex; flex-direction: row;
                             justify-content: space-between;">
-                                <li><button class="btn btn-primary">Duyệt bài</button></li>
-                                <li><button class="btn btn-primary">Từ chối</button></li>
+                                <li><button id="btn-accept" class="btn btn-primary" data-toggle="modal" data-target="#acceptModal">Duyệt bài</button></li>
+                                <li><button id="btn-dismiss" class="btn btn-primary" data-toggle="modal" data-target="#dismissModal">Từ chối</button></li>
                             </ul>
                         </td>
                     </tr>
@@ -191,6 +178,138 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Accept Modal -->
+        <div class="modal fade" id="acceptModal" tabindex="-1" role="dialog" aria-labelledby="acceptModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="acceptModalLabel">Hiệu chỉnh</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+
+                <div class="form-row">
+
+                    <!-- Input Category -->
+                    <label for="inputCategory" class="col-12 col-md-3 col-form-label">Chuyên mục</label>
+
+                    <!-- Parent Category -->
+                    <div class="col-12 col-md-4">
+                        <select class="form-control" id="inputCategory">
+                            <option></option>
+                            <option>Đời sống</option>
+                            <option>Giải trí</option>
+                            <option>Giáo dục</option>
+                            <option>Kinh tế</option>
+                            <option>Pháp luật</option>
+                            <option>Thế giới</option>
+                            <option>Thể thao</option>
+                            <option>Văn hoá</option>
+                            <option>Xã hội</option>
+                        </select>
+                    </div>
+
+                    <!-- Child Category -->
+                    <div class="col-12 col-md-4">
+                        <select class="form-control" id="inputCategory">
+                            <option></option>
+                            <option>Đời sống</option>
+                            <option>Giải trí</option>
+                            <option>Giáo dục</option>
+                            <option>Kinh tế</option>
+                            <option>Pháp luật</option>
+                            <option>Thế giới</option>
+                            <option>Thể thao</option>
+                            <option>Văn hoá</option>
+                            <option>Xã hội</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Premium Check -->
+                <div class="form-group form-check" style="margin-top: 20px;">
+                    <div class="col-12 col-md-1">
+                        <input type="checkbox" class="form-check-input" id="inputCheck">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label class="col-12 col-md-1 form-check-label" for="inputCheck">Premium</label>
+                    </div>
+                </div>
+
+
+                <!-- Input Tag -->
+                <div class="form-group">
+                    <label for="inputTag" class="col-12 col-md-1 col-form-label"">Nhãn</label>
+                    <div class="col-12 col-md-11">
+
+                        <input name="tags" id="tags" value="đời sống,pháp luật,xã hội" data-tagsinput-init="true" style="display: none;" class="editable editable-click editable-empty">
+
+                        <div id="tags_tagsinput" class="tagsinput" style="width: 100%; min-height: 75%; height: 75%;">
+                            <span class="tag">
+                                <span>đời sống&nbsp;&nbsp;</span>
+                                <a href="#" title="Removing tag">x</a>
+                            </span>
+                            <span class="tag">
+                                <span>pháp luật&nbsp;&nbsp;</span>
+                                <a href="#" title="Removing tag">x</a>
+                            </span>
+                            <span class="tag">
+                                <span>xã hội&nbsp;&nbsp;</span>
+                                <a href="#" title="Removing tag">x</a>
+                            </span>
+                            <div id="tags_addTag">
+                                <input id="tags_tag" value="" data-default="Add More" style="color: rgb(102, 102, 102); width: 68px;">
+                            </div>
+                            <div class="tags_clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                <button type="button" class="btn btn-primary">Hoàn tất</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Dismiss Modal -->
+        <div class="modal fade" id="dismissModal" tabindex="-1" role="dialog" aria-labelledby="dismissModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="dismissModalLabel">Ghi chú</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="col-12">
+                    <textarea class="form-control" id="inputNote"></textarea>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                <button type="button" class="btn btn-primary">Hoàn tất</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
 
         <!-- Page Navigation -->
         <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
@@ -206,6 +325,7 @@
 
     </div>
     <!-- ##### Blog Post Area End ##### -->
+
 
 
     <!-- Footer -->
@@ -305,6 +425,8 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <!-- Input Tag js -->
+    <script src="http://www.urbanui.com/equinox/template/vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
 
 </body>
 
